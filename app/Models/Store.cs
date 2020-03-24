@@ -7,6 +7,8 @@ namespace cs_vending_machine.Models
     public List<Food> Foods { get; set; }
     public List<Drink> Drinks { get; set; }
 
+    public User User { get; set; }
+
     public Store()
     {
       Foods = new List<Food>(){
@@ -20,6 +22,8 @@ namespace cs_vending_machine.Models
         new Drink("Coke", 1.50f, "Cola", 5),
         new Drink("Iced Tea", .99f, "Green Tea Blast", 3)
       };
+
+      User = new User("", 0f);
     }
 
   }
