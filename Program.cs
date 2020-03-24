@@ -1,4 +1,5 @@
 ﻿using System;
+using cs_vending_machine.Controllers;
 
 namespace cs_vending_machine
 {
@@ -6,7 +7,8 @@ namespace cs_vending_machine
   {
     static void Main(string[] args)
     {
-
+      VendingController vm = new VendingController();
+      vm.Run();
     }
   }
 }
