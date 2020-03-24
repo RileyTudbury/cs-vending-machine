@@ -20,7 +20,7 @@ namespace cs_vending_machine.Controllers
 
     private void GetUserInput()
     {
-      System.Console.WriteLine("What would you like to do? (view (F)ood, view (D)rinks, view (B)alance, (P)urchase, (Q)uit)");
+      System.Console.WriteLine("What would you like to do? (view (F)ood, view (D)rinks, view (B)alance, (P)urchase, (A)dd funds, (Q)uit)");
       string input = Console.ReadLine().ToLower();
       string indexString = "";
       switch (input)
@@ -70,6 +70,11 @@ namespace cs_vending_machine.Controllers
               break;
 
           }
+          break;
+        case "add funds":
+        case "add":
+        case "a":
+          _vs.AddQuarter();
           break;
         default:
           System.Console.WriteLine("Invalid selection.");

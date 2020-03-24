@@ -79,6 +79,12 @@ namespace cs_vending_machine.Services
       Messages.Add(new Message("Invalid selection", ConsoleColor.Red));
     }
 
+    public void AddQuarter()
+    {
+      _store.User.Cash += .25f;
+      Messages.Add(new Message($"Added $0.25, current balance: ${_store.User.Cash.ToString("0.00")}"));
+    }
+
     public void CreateUser(string name, float cash)
     {
       _store.User.Name = name;
@@ -87,7 +93,7 @@ namespace cs_vending_machine.Services
     internal void CheckBalance()
     {
       float rawCash = _store.User.Cash;
-      string displayCash = rawCash.ToString("#.##");
+      string displayCash = rawCash.ToString("0.00");
       Messages.Add(new Message($"Your current balance is ${displayCash}"));
     }
   }
